@@ -1,0 +1,13 @@
+# do not print this shit
+print("hello world"); # don't print this either
+value_one = 3;
+# Here is some invalid code # and double comment???
+i = 242.444444;
+a = True;
+c = False;
+
+print(value_one);
+val_two = read();
+
+c = (2 - 2) * 1;
+my_value = 1+5*3-2;

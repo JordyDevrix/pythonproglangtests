@@ -1,0 +1,127 @@
+[
+  {
+    "type": "FunctionCall",
+    "name": "print",
+    "arguments": [
+      {
+        "type": "STRING",
+        "value": "hello world"
+      }
+    ]
+  },
+  {
+    "type": "VariableDeclaration",
+    "name": "value_one",
+    "value": {
+      "type": "INT",
+      "value": "3"
+    }
+  },
+  {
+    "type": "VariableDeclaration",
+    "name": "i",
+    "value": {
+      "type": "FLOAT",
+      "value": "242.444444"
+    }
+  },
+  {
+    "type": "VariableDeclaration",
+    "name": "a",
+    "value": {
+      "type": "BOOL",
+      "value": "True"
+    }
+  },
+  {
+    "type": "VariableDeclaration",
+    "name": "c",
+    "value": {
+      "type": "BOOL",
+      "value": "False"
+    }
+  },
+  {
+    "type": "FunctionCall",
+    "name": "print",
+    "arguments": [
+      {
+        "type": "Identifier",
+        "name": "value_one"
+      }
+    ]
+  },
+  {
+    "type": "VariableDeclaration",
+    "name": "val_two",
+    "value": {
+      "type": "FunctionCall",
+      "name": "read",
+      "arguments": []
+    }
+  },
+  {
+    "type": "VariableDeclaration",
+    "name": "c",
+    "value": {
+      "type": "BinaryExpression",
+      "operator": "*",
+      "left": {
+        "type": "BinaryExpression",
+        "operator": "-",
+        "left": [
+          {
+            "type": "INT",
+            "value": "2"
+          }
+        ],
+        "right": {
+          "type": "INT",
+          "value": "2"
+        }
+      },
+      "right": {
+        "type": "INT",
+        "value": "1"
+      }
+    }
+  },
+  {
+    "type": "VariableDeclaration",
+    "name": "my_value",
+    "value": {
+      "type": "BinaryExpression",
+      "operator": "+",
+      "left": [
+        {
+          "type": "INT",
+          "value": "1"
+        }
+      ],
+      "right": {
+        "type": "BinaryExpression",
+        "operator": "*",
+        "left": [
+          {
+            "type": "INT",
+            "value": "5"
+          }
+        ],
+        "right": {
+          "type": "BinaryExpression",
+          "operator": "-",
+          "left": [
+            {
+              "type": "INT",
+              "value": "3"
+            }
+          ],
+          "right": {
+            "type": "INT",
+            "value": "2"
+          }
+        }
+      }
+    }
+  }
+]
