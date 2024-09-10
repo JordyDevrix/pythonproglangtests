@@ -6,6 +6,10 @@ i = 242.444444;
 a = True;
 c = False;
 
+if (a) {
+    print("a = true")
+}
+
 ctr = 0;
 
 print(value_one);

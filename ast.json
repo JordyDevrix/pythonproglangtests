@@ -1,29 +1,36 @@
-{
-  "ParserVersion": "0.1",
-  "Program": [
-    {
-      "Node": {
-        "type": "FunctionCall",
-        "name": "print",
-        "arguments": [
+[
+  {
+    "NODE": [
+      {
+        "type": "VariableDeclaration",
+        "name": "i",
+        "value": [
           {
-            "type": "STRING",
-            "value": "value_two"
+            "type": "INT",
+            "value": "0"
           }
         ]
       }
-    },
-    {
-      "Node": {
+    ]
+  },
+  {
+    "NODE": [
+      {
         "type": "FunctionCall",
         "name": "print",
         "arguments": [
-          {
-            "type": "STRING",
-            "value": "value_one"
-          }
+          [
+            {
+              "type": "STRING",
+              "value": "i, hello world"
+            },
+            {
+              "type": "IDENTIFIER",
+              "value": "i"
+            }
+          ]
         ]
       }
-    }
-  ]
-}
+    ]
+  }
+]

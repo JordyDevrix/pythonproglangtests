@@ -14,16 +14,19 @@ def main():
     tokens = tokenizer.create_tokens()
 
     # Print tokens
-    print(tokens)
+    # for token in tokens:
+    #     print(token)
 
     # Parse tokens and make ast
-    ast = parser_example.parse_tokens(tokens)
+    # ast = parser_example.parse_tokens(tokens)
+    ast = parser.parse_tokens(tokens)
 
-    # Covert ast to json and save as json file
+    # Save as json file
     ast_json_maker.save_json(ast, indent=2)
 
-    # Print ast
-    print(ast)
+    # Convert ast to json and print ast
+    ast_json = ast_json_maker.make_json(ast, indent=2)
+    print(ast_json)
 
 
 if __name__ == '__main__':

@@ -21,14 +21,15 @@ def parse_tokens(tokens):
                 args = []
                 while tokens[index] != ('SYMBOL', ')'):
                     args.append(parse_expression())
-                    if tokens[index] == ('SYMBOL', ','):
-                        index += 1  # Skip ','
+                    # if tokens[index] == ('SYMBOL', ','):
+                    #     index += 1  # Skip ','
                 index += 1  # Skip ')'
                 expression.append({
                     "type": "FunctionCall",
                     "name": func_name,
                     "arguments": args
                 })
+
             elif token_type in ('INT', 'FLOAT', 'STRING', 'BOOL'):
                 # Parse literals
                 expression.append({
@@ -64,9 +65,9 @@ def parse_tokens(tokens):
                     "left": expression,
                     "right": right
                 }
-            elif token_type == 'SYMBOL' and token_value in (';', ')'):
+            elif token_type == 'SYMBOL' and token_value in (';', ')', '}'):
                 break
-            elif token_type == 'SYMBOL' and token_value == '(':
+            elif token_type == 'SYMBOL' and token_value in ('(', '{'):
                 index += 1
                 expression = parse_expression()
                 index += 1  # Skip ')'
@@ -77,12 +78,16 @@ def parse_tokens(tokens):
 
     while index < len(tokens):
         node = parse_expression()
+        # Append node to ast
         if node:
-            ast.append({"Node": node})
+            print(node)
+            ast.append(node)
+
+        # Skip semicolon
         if index < len(tokens) and tokens[index] == ('SYMBOL', ';'):
             index += 1
 
-    ast_final = {"ParserVersion": "0.1", "Program": ast}
+    ast_final = ast
     return ast_final
 
 

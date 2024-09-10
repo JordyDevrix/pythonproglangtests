@@ -1,2 +1,3 @@
-print("value_two");
-print("value_one");
+# This is a comment
+i = 0;
+print("i, hello world", i);
