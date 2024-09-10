@@ -6,14 +6,7 @@ i = 242.444444;
 a = True;
 c = False;
 
-if (2 > 5) {
-    print(c);
-}
-
 ctr = 0;
-while (ctr < 10) {
-    ctr++;
-}
 
 print(value_one);
 val_two = read();

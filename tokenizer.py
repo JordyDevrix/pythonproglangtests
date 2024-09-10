@@ -2,12 +2,12 @@ import errors
 from stdfunc import *
 
 
-def tokenizer():
+def create_tokens():
     # SETTINGS
     dec_identifier = "."
     # SETTINGS
 
-    with open("code.txt", "r") as file:
+    with open("code2.txt", "r") as file:
         code = file.read()
 
     code_lines = code.split("\n")
