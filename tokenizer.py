@@ -54,6 +54,9 @@ def create_tokens():
             i += 1
             while i < code_length and code[i] != '"':
                 i += 1
+                if i == code_length:
+                    print(errors.invalid_string(line + 1, code_lines, code[start_i:i]))
+                    exit(1)
             if i < code_length:
                 i += 1
             tokens.append(("STRING", code[start_i:i-1]))
@@ -64,6 +67,9 @@ def create_tokens():
             i += 1
             while i < code_length and code[i] != "'":
                 i += 1
+                if i == code_length:
+                    print(errors.invalid_string(line + 1, code_lines, code[start_i:i]))
+                    exit(1)
             if i < code_length:
                 i += 1
             tokens.append(("STRING", code[start_i:i-1]))
