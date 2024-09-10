@@ -84,6 +84,11 @@ def tokenizer():
             i += 4
             continue
 
+        if code[i:i+2] == "if" and (i+2 == code_length or not std_isalphanumeric(code[i+2])):
+            tokens.append(("IFSTATE", "if"))
+            i += 2
+            continue
+
         if code[i:i + 4] == "True" and (i + 4 == code_length or not std_isalphanumeric(code[i + 4])):
             tokens.append(("BOOL", "True"))
             i += 4

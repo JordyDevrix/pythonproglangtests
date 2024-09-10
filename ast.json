@@ -41,6 +41,58 @@
       "value": "False"
     }
   },
+  [
+    {
+      "type": "INT",
+      "value": "2"
+    },
+    {
+      "type": "INT",
+      "value": "5"
+    },
+    {
+      "type": "FunctionCall",
+      "name": "print",
+      "arguments": [
+        {
+          "type": "Identifier",
+          "name": "c"
+        }
+      ]
+    }
+  ],
+  {
+    "type": "VariableDeclaration",
+    "name": "ctr",
+    "value": {
+      "type": "INT",
+      "value": "0"
+    }
+  },
+  {
+    "type": "BinaryExpression",
+    "operator": "+",
+    "left": [
+      {
+        "type": "Identifier",
+        "name": "ctr"
+      },
+      {
+        "type": "INT",
+        "value": "10"
+      },
+      {
+        "type": "Identifier",
+        "name": "ctr"
+      }
+    ],
+    "right": {
+      "type": "BinaryExpression",
+      "operator": "+",
+      "left": [],
+      "right": []
+    }
+  },
   {
     "type": "FunctionCall",
     "name": "print",
