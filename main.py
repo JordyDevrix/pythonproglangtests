@@ -20,7 +20,6 @@ def main():
     ast = parser_example.parse_tokens(tokens)
 
     # Covert ast to json and save as json file
-    ast = ast_json_maker.make_json(ast, indent=2)
     ast_json_maker.save_json(ast, indent=2)
 
     # Print ast

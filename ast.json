@@ -1,1 +1,29 @@
-"{\n  \"ParserVersion\": \"0.1\",\n  \"Program\": [\n    {\n      \"Node\": {\n        \"type\": \"FunctionCall\",\n        \"name\": \"print\",\n        \"arguments\": [\n          {\n            \"type\": \"STRING\",\n            \"value\": \"value_two\"\n          }\n        ]\n      }\n    },\n    {\n      \"Node\": {\n        \"type\": \"FunctionCall\",\n        \"name\": \"print\",\n        \"arguments\": [\n          {\n            \"type\": \"STRING\",\n            \"value\": \"value_one\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+{
+  "ParserVersion": "0.1",
+  "Program": [
+    {
+      "Node": {
+        "type": "FunctionCall",
+        "name": "print",
+        "arguments": [
+          {
+            "type": "STRING",
+            "value": "value_two"
+          }
+        ]
+      }
+    },
+    {
+      "Node": {
+        "type": "FunctionCall",
+        "name": "print",
+        "arguments": [
+          {
+            "type": "STRING",
+            "value": "value_one"
+          }
+        ]
+      }
+    }
+  ]
+}
