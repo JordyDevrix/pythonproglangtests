@@ -1,6 +1,6 @@
 # do not print this shit
 print("hello world"); # don't print this either
-value_one = 3;
+value_one = 2;
 # Here is some invalid code # and double comment???
 i = 242.444444;
 a = True;
