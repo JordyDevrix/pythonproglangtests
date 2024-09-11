@@ -1,4 +1,5 @@
 import file_scanner
+import javax_runtime
 import tokenizer
 import parser_example
 import parser
@@ -26,7 +27,10 @@ def main():
 
     # Convert ast to json and print ast
     ast_json = ast_json_maker.make_json(ast, indent=2)
-    print(ast_json)
+    # print(ast_json)
+
+    # Run runtime
+    javax_runtime.run_javax(ast)
 
 
 if __name__ == '__main__':

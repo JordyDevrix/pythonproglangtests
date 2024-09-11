@@ -22,7 +22,7 @@ def parse_tokens(tokens):
                 idx += 1    # This is to skip the closing bracket
                 expression.append(
                     {
-                        "type": "FunctionCall",
+                        "type": "FUNCTION_CALL",
                         "name": function_name,
                         "arguments": arguments
                     }
@@ -36,7 +36,7 @@ def parse_tokens(tokens):
                     idx += 2    # Skip the assignment operator
                     expression.append(
                         {
-                            "type": "VariableDeclaration",
+                            "type": "VAR_DECL",
                             "name": token_value,
                             "value": parse_expression()
                         }
@@ -55,7 +55,6 @@ def parse_tokens(tokens):
         node = {"NODE": parse_expression()}
         # Check if node is not empty and append to ast list
         if node:
-            print(node)
             ast.append(node)
 
         if idx < len(tokens) and tokens[idx] == ("SYMBOL", ";"):

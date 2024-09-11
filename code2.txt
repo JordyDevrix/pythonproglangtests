@@ -1,3 +1,10 @@
 # This is a comment
-i = 0;
-print("i, hello world", i);
+i = "Hello";
+print("%V World", i);
+
+print("hello");
+
+j = read('Enter a number to print: ');
+
+print("You just entered: %V", j);
+

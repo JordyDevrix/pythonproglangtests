@@ -2,12 +2,12 @@
   {
     "NODE": [
       {
-        "type": "VariableDeclaration",
+        "type": "VAR_DECL",
         "name": "i",
         "value": [
           {
-            "type": "INT",
-            "value": "0"
+            "type": "STRING",
+            "value": "Hello"
           }
         ]
       }
@@ -16,17 +16,75 @@
   {
     "NODE": [
       {
-        "type": "FunctionCall",
+        "type": "FUNCTION_CALL",
         "name": "print",
         "arguments": [
           [
             {
               "type": "STRING",
-              "value": "i, hello world"
+              "value": "%V World"
             },
             {
               "type": "IDENTIFIER",
               "value": "i"
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "NODE": [
+      {
+        "type": "FUNCTION_CALL",
+        "name": "print",
+        "arguments": [
+          [
+            {
+              "type": "STRING",
+              "value": "hello"
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "NODE": [
+      {
+        "type": "VAR_DECL",
+        "name": "j",
+        "value": [
+          {
+            "type": "FUNCTION_CALL",
+            "name": "read",
+            "arguments": [
+              [
+                {
+                  "type": "STRING",
+                  "value": "Enter a number to print: "
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "NODE": [
+      {
+        "type": "FUNCTION_CALL",
+        "name": "print",
+        "arguments": [
+          [
+            {
+              "type": "STRING",
+              "value": "You just entered: %V"
+            },
+            {
+              "type": "IDENTIFIER",
+              "value": "j"
             }
           ]
         ]
