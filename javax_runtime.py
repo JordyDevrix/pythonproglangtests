@@ -10,31 +10,34 @@ def run_javax(ast):
         nonlocal idx
 
         while idx < len(ast):
-            node_content = ast[idx]["NODE"][0]
+            node_content = ast[idx]["NODE"]
             # print(node_content["type"])
 
             match node_content["type"]:
                 case "VAR_DECL":
                     value_name = node_content["name"]
-                    value_type = node_content["value"][0]["type"]
+                    value_type = node_content["value"]["type"]
                     value = None
 
                     if value_type == "INT":
-                        value = node_content["value"][0].get("value")
+                        value = node_content["value"].get("value")
 
                     elif value_type == "FLOAT":
-                        value = node_content["value"][0].get("value")
+                        value = node_content["value"].get("value")
 
                     elif value_type == "STRING":
-                        value = node_content["value"][0].get("value")
+                        value = node_content["value"].get("value")
 
                     elif value_type == "BOOL":
-                        value = node_content["value"][0].get("value")
+                        value = node_content["value"].get("value")
 
                     elif value_type == "FUNCTION_CALL":
                         if node_content["value"][0]["name"] == "read":
                             arguments = node_content["value"][0]["arguments"][0]
                             value = input(arguments[0]["value"])
+
+                    elif value_type == "BIN_EXPR":
+                        ...
 
                     global_variables.append({value_name: value})
 

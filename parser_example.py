@@ -74,6 +74,7 @@ def parse_tokens(tokens):
             else:
                 index += 1
 
+            print(index, len(tokens))
         return expression[0] if len(expression) == 1 else expression
 
     while index < len(tokens):

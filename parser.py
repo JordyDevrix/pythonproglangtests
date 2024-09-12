@@ -44,12 +44,24 @@ def parse_tokens(tokens):
                 else:
                     expression.append({"type": token_type, "value": token_value})
                     idx += 1    # IMPORTANT TO BREAK THE LOOP
+            elif token_type == "OPERATOR":
+                idx += 1
+                expression = {
+                    "type": "BIN_EXPR",
+                    "operator": token_value,
+                    "left": expression,
+                    "right": parse_expression()
+                }
             elif (token_type == "SYMBOL") and (token_value in (")", ";")):
                 break
+            elif (token_type == "SYMBOL") and (token_value == "("):
+                idx += 1
+                expression = parse_expression()
+                idx += 1
             else:
                 idx += 1
 
-        return expression
+        return expression[0] if len(expression) == 1 else expression
 
     while idx < len(tokens):
         node = {"NODE": parse_expression()}

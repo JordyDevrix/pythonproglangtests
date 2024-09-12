@@ -1,13 +1,16 @@
 
 def jax_print(node_content, global_variables):
     arguments = node_content["arguments"][0]
-    string = arguments[0]['value']
     local_identifiers = []
-    for variable in arguments[1:]:
-        for global_variable in global_variables:
-            if variable.get("value") == list(global_variable.keys())[0]:
-                local_identifiers.append(global_variable)
-                break
+    if type(arguments) == list:
+        string = arguments[0]["value"]
+        for variable in arguments[1:]:
+            for global_variable in global_variables:
+                if variable.get("value") == list(global_variable.keys())[0]:
+                    local_identifiers.append(global_variable)
+                    break
+    else:
+        string = arguments["value"]
 
     lcl_idx = 0
     var_count = 0

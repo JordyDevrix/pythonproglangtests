@@ -1,94 +1,70 @@
 [
   {
-    "NODE": [
-      {
-        "type": "VAR_DECL",
-        "name": "i",
-        "value": [
+    "NODE": {
+      "type": "VAR_DECL",
+      "name": "i",
+      "value": {
+        "type": "STRING",
+        "value": "Hello"
+      }
+    }
+  },
+  {
+    "NODE": {
+      "type": "FUNCTION_CALL",
+      "name": "print",
+      "arguments": [
+        [
           {
             "type": "STRING",
-            "value": "Hello"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "NODE": [
-      {
-        "type": "FUNCTION_CALL",
-        "name": "print",
-        "arguments": [
-          [
-            {
-              "type": "STRING",
-              "value": "%V World"
-            },
-            {
-              "type": "IDENTIFIER",
-              "value": "i"
-            }
-          ]
-        ]
-      }
-    ]
-  },
-  {
-    "NODE": [
-      {
-        "type": "FUNCTION_CALL",
-        "name": "print",
-        "arguments": [
-          [
-            {
-              "type": "STRING",
-              "value": "hello"
-            }
-          ]
-        ]
-      }
-    ]
-  },
-  {
-    "NODE": [
-      {
-        "type": "VAR_DECL",
-        "name": "j",
-        "value": [
+            "value": "%V World"
+          },
           {
-            "type": "FUNCTION_CALL",
-            "name": "read",
-            "arguments": [
-              [
-                {
-                  "type": "STRING",
-                  "value": "Enter a number to print: "
-                }
-              ]
-            ]
+            "type": "IDENTIFIER",
+            "value": "i"
           }
         ]
-      }
-    ]
+      ]
+    }
   },
   {
-    "NODE": [
-      {
-        "type": "FUNCTION_CALL",
-        "name": "print",
-        "arguments": [
-          [
+    "NODE": {
+      "type": "FUNCTION_CALL",
+      "name": "print",
+      "arguments": [
+        {
+          "type": "STRING",
+          "value": "hello"
+        }
+      ]
+    }
+  },
+  {
+    "NODE": {
+      "type": "VAR_DECL",
+      "name": "c",
+      "value": {
+        "type": "BIN_EXPR",
+        "operator": "*",
+        "left": {
+          "type": "BIN_EXPR",
+          "operator": "-",
+          "left": [
             {
-              "type": "STRING",
-              "value": "You just entered: %V"
-            },
-            {
-              "type": "IDENTIFIER",
-              "value": "j"
+              "type": "INT",
+              "value": "2"
             }
-          ]
-        ]
+          ],
+          "right": {
+            "type": "INT",
+            "value": "2"
+          }
+        },
+        "right": {
+          "type": "INT",
+          "value": "1"
+        }
       }
-    ]
+    }
   }
 ]
