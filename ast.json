@@ -2,6 +2,22 @@
   {
     "NODE": {
       "type": "VAR_DECL",
+      "name": "j",
+      "value": {
+        "type": "FUNCTION_CALL",
+        "name": "read",
+        "arguments": [
+          {
+            "type": "STRING",
+            "value": "Enter a number to print: "
+          }
+        ]
+      }
+    }
+  },
+  {
+    "NODE": {
+      "type": "VAR_DECL",
       "name": "i",
       "value": {
         "type": "STRING",
@@ -36,6 +52,24 @@
           "type": "STRING",
           "value": "hello"
         }
+      ]
+    }
+  },
+  {
+    "NODE": {
+      "type": "FUNCTION_CALL",
+      "name": "print",
+      "arguments": [
+        [
+          {
+            "type": "STRING",
+            "value": "You just entered: %V"
+          },
+          {
+            "type": "IDENTIFIER",
+            "value": "j"
+          }
+        ]
       ]
     }
   },

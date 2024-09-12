@@ -32,9 +32,9 @@ def run_javax(ast):
                         value = node_content["value"].get("value")
 
                     elif value_type == "FUNCTION_CALL":
-                        if node_content["value"][0]["name"] == "read":
-                            arguments = node_content["value"][0]["arguments"][0]
-                            value = input(arguments[0]["value"])
+                        if node_content["value"]["name"] == "read":
+                            arguments = node_content["value"]["arguments"][0]
+                            value = input(arguments["value"])
 
                     elif value_type == "BIN_EXPR":
                         ...

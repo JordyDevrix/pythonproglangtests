@@ -27,7 +27,7 @@ def main():
 
     # Convert ast to json and print ast
     ast_json = ast_json_maker.make_json(ast, indent=2)
-    print(ast_json)
+    # print(ast_json)
 
     # Run runtime
     javax_runtime.run_javax(ast)
