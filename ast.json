@@ -96,37 +96,17 @@
           "left": [
             {
               "type": "INT",
-              "value": "1"
+              "value": "2"
             }
           ],
           "right": {
             "type": "INT",
-            "value": "1"
+            "value": "2"
           }
         },
         "right": {
-          "type": "BIN_EXPR",
-          "operator": "*",
-          "left": [
-            {
-              "type": "INT",
-              "value": "4"
-            }
-          ],
-          "right": {
-            "type": "BIN_EXPR",
-            "operator": "+",
-            "left": [
-              {
-                "type": "INT",
-                "value": "2"
-              }
-            ],
-            "right": {
-              "type": "INT",
-              "value": "6"
-            }
-          }
+          "type": "INT",
+          "value": "5"
         }
       }
     }

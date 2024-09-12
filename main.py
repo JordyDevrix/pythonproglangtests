@@ -6,7 +6,7 @@ import parser
 import ast_json_maker
 
 
-def main():
+def main(debug):
     # Read code from file
     file_path = "code2.txt"
     file_scanner.read_code(file_path)
@@ -27,11 +27,12 @@ def main():
 
     # Convert ast to json and print ast
     ast_json = ast_json_maker.make_json(ast, indent=2)
-    # print(ast_json)
+    if debug:
+        print(ast_json)
 
     # Run runtime
     javax_runtime.run_javax(ast)
 
 
 if __name__ == '__main__':
-    main()
+    main(debug=True)

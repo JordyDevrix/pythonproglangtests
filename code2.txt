@@ -9,7 +9,7 @@ print("hello");
 
 print("You just entered: %V", j);
 
-c = (1 + 1) * (4 * (2 + 6));
+c = 2 + 2 * 5;
 
 print("C = %V", c);
 
