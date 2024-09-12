@@ -89,24 +89,44 @@
       "name": "c",
       "value": {
         "type": "BIN_EXPR",
-        "operator": "-",
+        "operator": "*",
         "left": {
+          "type": "BIN_EXPR",
+          "operator": "+",
+          "left": [
+            {
+              "type": "INT",
+              "value": "1"
+            }
+          ],
+          "right": {
+            "type": "INT",
+            "value": "1"
+          }
+        },
+        "right": {
           "type": "BIN_EXPR",
           "operator": "*",
           "left": [
             {
               "type": "INT",
-              "value": "2"
+              "value": "4"
             }
           ],
           "right": {
-            "type": "INT",
-            "value": "2"
+            "type": "BIN_EXPR",
+            "operator": "+",
+            "left": [
+              {
+                "type": "INT",
+                "value": "2"
+              }
+            ],
+            "right": {
+              "type": "INT",
+              "value": "6"
+            }
           }
-        },
-        "right": {
-          "type": "INT",
-          "value": "34"
         }
       }
     }
@@ -119,7 +139,7 @@
         [
           {
             "type": "STRING",
-            "value": "%V"
+            "value": "C = %V"
           },
           {
             "type": "IDENTIFIER",

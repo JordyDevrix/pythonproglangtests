@@ -9,9 +9,9 @@ print("hello");
 
 print("You just entered: %V", j);
 
-c = (2 * 2) - 34;
+c = (1 + 1) * (4 * (2 + 6));
 
-print("%V", c);
+print("C = %V", c);
 
 
 
