@@ -1,10 +1,17 @@
 # This is a comment
+i = "'bruh'";
 j = read('Enter a number to print: ');
-i = "Hello";
-print("%V World", i);
+k = "Hello";
+
+print("%V Ahh moment", i);
 
 print("hello");
 
 print("You just entered: %V", j);
 
-c = (2 - 2) * 1;
+c = (2 * 2) - 34;
+
+print("%V", c);
+
+
+

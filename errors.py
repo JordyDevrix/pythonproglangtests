@@ -17,3 +17,9 @@ def invalid_variable_name(line, error_line, code):
             f"\terror at line {line}\n"
             f"\t>> {error_line[line - 1]}\n"
             f"\t   {'^' * len(code)}")
+
+
+def variable_already_declared(variable):
+    return (f"VARIABLE_ALREADY_DECLARED\n"
+            f"\tvariable '{variable}' already declared\n")
+

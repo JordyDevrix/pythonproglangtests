@@ -2,6 +2,16 @@
   {
     "NODE": {
       "type": "VAR_DECL",
+      "name": "i",
+      "value": {
+        "type": "STRING",
+        "value": "'bruh'"
+      }
+    }
+  },
+  {
+    "NODE": {
+      "type": "VAR_DECL",
       "name": "j",
       "value": {
         "type": "FUNCTION_CALL",
@@ -18,7 +28,7 @@
   {
     "NODE": {
       "type": "VAR_DECL",
-      "name": "i",
+      "name": "k",
       "value": {
         "type": "STRING",
         "value": "Hello"
@@ -33,7 +43,7 @@
         [
           {
             "type": "STRING",
-            "value": "%V World"
+            "value": "%V Ahh moment"
           },
           {
             "type": "IDENTIFIER",
@@ -79,10 +89,10 @@
       "name": "c",
       "value": {
         "type": "BIN_EXPR",
-        "operator": "*",
+        "operator": "-",
         "left": {
           "type": "BIN_EXPR",
-          "operator": "-",
+          "operator": "*",
           "left": [
             {
               "type": "INT",
@@ -96,9 +106,27 @@
         },
         "right": {
           "type": "INT",
-          "value": "1"
+          "value": "34"
         }
       }
+    }
+  },
+  {
+    "NODE": {
+      "type": "FUNCTION_CALL",
+      "name": "print",
+      "arguments": [
+        [
+          {
+            "type": "STRING",
+            "value": "%V"
+          },
+          {
+            "type": "IDENTIFIER",
+            "value": "c"
+          }
+        ]
+      ]
     }
   }
 ]
