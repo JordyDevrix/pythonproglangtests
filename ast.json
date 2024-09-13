@@ -4,8 +4,8 @@
       "type": "VAR_DECL",
       "name": "i",
       "value": {
-        "type": "STRING",
-        "value": "'bruh'"
+        "type": "BOOL",
+        "value": "True"
       }
     }
   },
@@ -86,6 +86,22 @@
   {
     "NODE": {
       "type": "VAR_DECL",
+      "name": "d",
+      "value": {
+        "type": "FUNCTION_CALL",
+        "name": "read",
+        "arguments": [
+          {
+            "type": "STRING",
+            "value": "Enter the number you want to calculate: "
+          }
+        ]
+      }
+    }
+  },
+  {
+    "NODE": {
+      "type": "VAR_DECL",
       "name": "c",
       "value": {
         "type": "BIN_EXPR",
@@ -100,8 +116,8 @@
             }
           ],
           "right": {
-            "type": "INT",
-            "value": "2"
+            "type": "IDENTIFIER",
+            "value": "d"
           }
         },
         "right": {

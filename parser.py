@@ -43,6 +43,7 @@ def parse_tokens(tokens):
                     )
                 else:
                     expression.append({"type": token_type, "value": token_value})
+                    print(tokens[idx:])
                     idx += 1    # IMPORTANT TO BREAK THE LOOP
             elif token_type == "OPERATOR":
                 idx += 1
@@ -52,9 +53,19 @@ def parse_tokens(tokens):
                     "left": expression,
                     "right": parse_expression()
                 }
+            elif token_type == "IFSTATE":
+                idx += 2    # Skip the opening bracket
+                node_exp = {
+                    "type": "IF_STATEMENT",
+                    "condition": parse_expression(),
+                    "child": parse_expression()
+                }
+                expression.append(node_exp)
+                idx += 1
+
             elif (token_type == "SYMBOL") and (token_value in (")", ";")):
                 break
-            elif (token_type == "SYMBOL") and (token_value == "("):
+            elif (token_type == "SYMBOL") and (token_value in ("(", "{")):
                 idx += 1
                 expression = parse_expression()
                 idx += 1
@@ -71,4 +82,5 @@ def parse_tokens(tokens):
 
         if idx < len(tokens) and tokens[idx] == ("SYMBOL", ";"):
             idx += 1
+
     return ast

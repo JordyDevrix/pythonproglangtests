@@ -1,15 +1,17 @@
 # This is a comment
-i = "'bruh'";
+i = True;
 j = read('Enter a number to print: ');
 k = "Hello";
 
-print("%V Ahh moment", i);
+if (i) {
+    print("%V Ahh moment", i);
+}
 
 print("hello");
 
 print("You just entered: %V", j);
-
-c = 2 + 2 * 5;
+d = read("Enter the number you want to calculate: ");
+c = (2 + d) * 5;
 
 print("C = %V", c);
 

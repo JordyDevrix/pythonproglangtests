@@ -50,19 +50,19 @@ def run_javax(ast):
                 else:
                     right = run_node(node["right"])
 
-                operator = node["operator"]
-                if operator == "+":
-                    return left + right
-                elif operator == "-":
-                    return left - right
-                elif operator == "*":
-                    return left * right
-                elif operator == "/":
-                    return left / right
-                elif operator == "%":
-                    return left % right
-                elif operator == "**":
-                    return left ** right
+                match node["operator"]:
+                    case "+":
+                        return left + right
+                    case "-":
+                        return left - right
+                    case "*":
+                        return left * right
+                    case "/":
+                        return left / right
+                    case "%":
+                        return left % right
+                    case "**":
+                        return left ** right
 
             case "INT":
                 return int(node["value"])
@@ -72,6 +72,19 @@ def run_javax(ast):
                 return str(node["value"])
             case "BOOL":
                 return bool(node["value"])
+
+            case "IDENTIFIER":
+                for variable in global_variables:
+                    if node["value"] == list(variable.keys())[0]:
+                        value = list(variable.values())[0]
+                        if value.isnumeric():
+                            return int(value)
+                        elif value.isfloat():
+                            return float(value)
+                        elif value in ["True", "False"]:
+                            return bool(value)
+                        else:
+                            return value
 
     for node_data in ast:
         run_node(node_data["NODE"])
