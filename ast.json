@@ -4,14 +4,8 @@
       "type": "VAR_DECL",
       "name": "i",
       "value": {
-        "type": "FUNCTION_CALL",
-        "name": "read",
-        "arguments": [
-          {
-            "type": "STRING",
-            "value": "Enter your number: "
-          }
-        ]
+        "type": "BOOL",
+        "value": "True"
       }
     }
   },
@@ -20,8 +14,98 @@
       "type": "VAR_DECL",
       "name": "j",
       "value": {
+        "type": "FUNCTION_CALL",
+        "name": "read",
+        "arguments": [
+          {
+            "type": "STRING",
+            "value": "Enter a number to print: "
+          }
+        ]
+      }
+    }
+  },
+  {
+    "NODE": {
+      "type": "VAR_DECL",
+      "name": "k",
+      "value": {
+        "type": "STRING",
+        "value": "Hello"
+      }
+    }
+  },
+  {
+    "NODE": {
+      "type": "FUNCTION_CALL",
+      "name": "print",
+      "arguments": [
+        [
+          {
+            "type": "STRING",
+            "value": "%V Ahh moment"
+          },
+          {
+            "type": "IDENTIFIER",
+            "value": "i"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "NODE": {
+      "type": "FUNCTION_CALL",
+      "name": "print",
+      "arguments": [
+        {
+          "type": "STRING",
+          "value": "hello"
+        }
+      ]
+    }
+  },
+  {
+    "NODE": {
+      "type": "FUNCTION_CALL",
+      "name": "print",
+      "arguments": [
+        [
+          {
+            "type": "STRING",
+            "value": "You just entered: %V"
+          },
+          {
+            "type": "IDENTIFIER",
+            "value": "j"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "NODE": {
+      "type": "VAR_DECL",
+      "name": "d",
+      "value": {
+        "type": "FUNCTION_CALL",
+        "name": "read",
+        "arguments": [
+          {
+            "type": "STRING",
+            "value": "Enter the number you want to calculate: "
+          }
+        ]
+      }
+    }
+  },
+  {
+    "NODE": {
+      "type": "VAR_DECL",
+      "name": "c",
+      "value": {
         "type": "BIN_EXPR",
-        "operator": "+",
+        "operator": "*",
         "left": {
           "type": "BIN_EXPR",
           "operator": "+",
@@ -32,13 +116,13 @@
             }
           ],
           "right": {
-            "type": "INT",
-            "value": "2"
+            "type": "IDENTIFIER",
+            "value": "d"
           }
         },
         "right": {
           "type": "INT",
-          "value": "3"
+          "value": "5"
         }
       }
     }
@@ -51,11 +135,11 @@
         [
           {
             "type": "STRING",
-            "value": "%V"
+            "value": "C = %V"
           },
           {
             "type": "IDENTIFIER",
-            "value": "j"
+            "value": "c"
           }
         ]
       ]
