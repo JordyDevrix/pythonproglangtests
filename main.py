@@ -15,8 +15,8 @@ def main():
     tokens = tokenizer.create_tokens()
 
     # Print tokens
-    # for token in tokens:
-    #     print(token)
+    for token in tokens:
+        print(token)
 
     # Parse tokens and make ast
     # ast = parser_example.parse_tokens(tokens)
@@ -27,7 +27,7 @@ def main():
 
     # Convert ast to json and print ast
     ast_json = ast_json_maker.make_json(ast, indent=2)
-    # print(ast_json)
+    print(ast_json)
 
     # Run runtime
     javax_runtime.run_javax(ast)

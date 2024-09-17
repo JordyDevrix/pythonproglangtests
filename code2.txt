@@ -1,10 +1,5 @@
-# This is a comment
-j = read('Enter a number to print: ');
-i = "Hello";
-print("%V World", i);
+i = read("Enter your number: ");
 
-print("hello");
+j = (2 + 2) + 3;
 
-print("You just entered: %V", j);
-
-c = (2 - 2) * 1;
+print("%V", j);

@@ -2,14 +2,14 @@
   {
     "NODE": {
       "type": "VAR_DECL",
-      "name": "j",
+      "name": "i",
       "value": {
         "type": "FUNCTION_CALL",
         "name": "read",
         "arguments": [
           {
             "type": "STRING",
-            "value": "Enter a number to print: "
+            "value": "Enter your number: "
           }
         ]
       }
@@ -18,71 +18,13 @@
   {
     "NODE": {
       "type": "VAR_DECL",
-      "name": "i",
-      "value": {
-        "type": "STRING",
-        "value": "Hello"
-      }
-    }
-  },
-  {
-    "NODE": {
-      "type": "FUNCTION_CALL",
-      "name": "print",
-      "arguments": [
-        [
-          {
-            "type": "STRING",
-            "value": "%V World"
-          },
-          {
-            "type": "IDENTIFIER",
-            "value": "i"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "NODE": {
-      "type": "FUNCTION_CALL",
-      "name": "print",
-      "arguments": [
-        {
-          "type": "STRING",
-          "value": "hello"
-        }
-      ]
-    }
-  },
-  {
-    "NODE": {
-      "type": "FUNCTION_CALL",
-      "name": "print",
-      "arguments": [
-        [
-          {
-            "type": "STRING",
-            "value": "You just entered: %V"
-          },
-          {
-            "type": "IDENTIFIER",
-            "value": "j"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "NODE": {
-      "type": "VAR_DECL",
-      "name": "c",
+      "name": "j",
       "value": {
         "type": "BIN_EXPR",
-        "operator": "*",
+        "operator": "+",
         "left": {
           "type": "BIN_EXPR",
-          "operator": "-",
+          "operator": "+",
           "left": [
             {
               "type": "INT",
@@ -96,9 +38,27 @@
         },
         "right": {
           "type": "INT",
-          "value": "1"
+          "value": "3"
         }
       }
+    }
+  },
+  {
+    "NODE": {
+      "type": "FUNCTION_CALL",
+      "name": "print",
+      "arguments": [
+        [
+          {
+            "type": "STRING",
+            "value": "%V"
+          },
+          {
+            "type": "IDENTIFIER",
+            "value": "j"
+          }
+        ]
+      ]
     }
   }
 ]
