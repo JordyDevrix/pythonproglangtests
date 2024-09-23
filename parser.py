@@ -16,6 +16,8 @@ def parse_tokens(tokens):
             token_value = tokens[idx][1]
 
             if (token_type == "KEYWORD") and (token_value in javax_tokens.keywords):
+                if token_value == "return":
+                    break
                 function_name = token_value
                 idx += 2
                 arguments = []  # making a list of arguments to pass to the function
@@ -69,6 +71,42 @@ def parse_tokens(tokens):
 
                 expression.append(node_exp)
                 idx += 1
+
+            elif token_type == "FUNCTION":
+                idx += 1
+                name = tokens[idx][1]
+                node_exp = {
+                    "type": "FUNC_DECL",
+                    "name": name,
+                    "params": None,
+                    "child": None,
+                    "return": None
+                }
+                idx += 1
+                if tokens[idx] == ("SYMBOL", "("):
+                    idx += 1
+                    arguments = []
+                    while tokens[idx] != ("SYMBOL", ")"):
+                        arguments.append(tokens[idx][1])
+                        idx += 1
+                    node_exp["params"] = arguments
+                    idx += 1
+
+                node_exp["child"] = []
+                while tokens[idx] != ("SYMBOL", "}"):
+                    node_exp["child"].append(parse_expression())
+                    if tokens[idx][1] == ";":
+                        idx += 1
+
+                    if tokens[idx][1] == "return":
+                        idx += 1
+                        return_value = parse_expression()
+                        node_exp["return"] = return_value
+                        break
+
+                expression.append(node_exp)
+
+                print(expression)
 
             elif (token_type == "SYMBOL") and (token_value in (")", ";")):
                 break

@@ -2,13 +2,10 @@ import errors
 from stdfunc import *
 
 
-def create_tokens():
+def create_tokens(code):
     # SETTINGS
     dec_identifier = "."
     # SETTINGS
-
-    with open("code2.txt", "r") as file:
-        code = file.read()
 
     code_lines = code.split("\n")
     tokens = []
@@ -80,9 +77,9 @@ def create_tokens():
             i += 5
             continue
 
-        if code[i:i+5] == "return" and (i+5 == code_length or not std_isalphanumeric(code[i+5])):
+        if code[i:i+6] == "return" and (i+6 == code_length or not std_isalphanumeric(code[i+6])):
             tokens.append(("KEYWORD", "return"))
-            i += 5
+            i += 6
             continue
 
         if code[i:i+8] == "function" and (i+8 == code_length or not std_isalphanumeric(code[i+8])):
@@ -92,11 +89,6 @@ def create_tokens():
 
         if code[i:i+4] == "read" and (i+4 == code_length or not std_isalphanumeric(code[i+4])):
             tokens.append(("KEYWORD", "read"))
-            i += 4
-            continue
-
-        if code[i:i+4] == "func" and (i+4 == code_length or not std_isalphanumeric(code[i+4])):
-            tokens.append(("KEYWORD", "func"))
             i += 4
             continue
 

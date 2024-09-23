@@ -1,7 +1,6 @@
-myfunction = function() {
+function myfunction() {
     b = 1;
     return b;
 };
-
-print("%V", myfunction);
-
+retval = myfunction();
+print("%V", retval);

@@ -1,76 +1,45 @@
 [
   {
     "NODE": {
+      "type": "VAR_DECL",
+      "name": "answer",
+      "value": {
+        "type": "FUNCTION_CALL",
+        "name": "read",
+        "arguments": [
+          {
+            "type": "STRING",
+            "value": "Did she take the kids?: "
+          }
+        ]
+      }
+    }
+  },
+  {
+    "NODE": {
+      "type": "VAR_DECL",
+      "name": "did_she_take_the_kids",
+      "value": {
+        "type": "IDENTIFIER",
+        "value": "answer"
+      }
+    }
+  },
+  {
+    "NODE": {
       "type": "IF_STATEMENT",
       "condition": {
-        "type": "BOOL",
-        "value": "True"
+        "type": "IDENTIFIER",
+        "value": "did_she_take_the_kids"
       },
       "child": [
-        {
-          "type": "VAR_DECL",
-          "name": "i",
-          "value": {
-            "type": "FUNCTION_CALL",
-            "name": "read",
-            "arguments": [
-              {
-                "type": "STRING",
-                "value": "Enter the I value: "
-              }
-            ]
-          }
-        },
         {
           "type": "FUNCTION_CALL",
           "name": "print",
           "arguments": [
-            [
-              {
-                "type": "STRING",
-                "value": "bye world & %V"
-              },
-              {
-                "type": "IDENTIFIER",
-                "value": "i"
-              }
-            ]
-          ]
-        },
-        {
-          "type": "IF_STATEMENT",
-          "condition": {
-            "type": "BOOL",
-            "value": "True"
-          },
-          "child": [
             {
-              "type": "IF_STATEMENT",
-              "condition": {
-                "type": "BOOL",
-                "value": "True"
-              },
-              "child": [
-                {
-                  "type": "IF_STATEMENT",
-                  "condition": {
-                    "type": "BOOL",
-                    "value": "True"
-                  },
-                  "child": [
-                    {
-                      "type": "FUNCTION_CALL",
-                      "name": "print",
-                      "arguments": [
-                        {
-                          "type": "STRING",
-                          "value": "Hello"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
+              "type": "STRING",
+              "value": "She took the kids."
             }
           ]
         }
