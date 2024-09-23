@@ -8,7 +8,7 @@ c = False;
 
 if (a) {
     print("a = true")
-}
+};
 
 ctr = 0;
 

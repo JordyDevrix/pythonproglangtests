@@ -4,7 +4,7 @@
       "type": "IF_STATEMENT",
       "condition": {
         "type": "BOOL",
-        "value": "False"
+        "value": "True"
       },
       "child": [
         {
@@ -41,16 +41,34 @@
           "type": "IF_STATEMENT",
           "condition": {
             "type": "BOOL",
-            "value": "False"
+            "value": "True"
           },
           "child": [
             {
-              "type": "FUNCTION_CALL",
-              "name": "print",
-              "arguments": [
+              "type": "IF_STATEMENT",
+              "condition": {
+                "type": "BOOL",
+                "value": "True"
+              },
+              "child": [
                 {
-                  "type": "STRING",
-                  "value": "Hello"
+                  "type": "IF_STATEMENT",
+                  "condition": {
+                    "type": "BOOL",
+                    "value": "True"
+                  },
+                  "child": [
+                    {
+                      "type": "FUNCTION_CALL",
+                      "name": "print",
+                      "arguments": [
+                        {
+                          "type": "STRING",
+                          "value": "Hello"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }

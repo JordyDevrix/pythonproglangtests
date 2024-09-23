@@ -1,10 +1,7 @@
-if (False) {
-    i = read("Enter the I value: ");
-    print("bye world & %V", i);
-
-    if (False) {
-        print("Hello");
-    };
-
+myfunction = function() {
+    b = 1;
+    return b;
 };
+
+print("%V", myfunction);
 
