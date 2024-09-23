@@ -1,6 +1,7 @@
 keywords = [
     "print",
-    "read"
+    "read",
+    "return",
 ]
 
 conditionals = [

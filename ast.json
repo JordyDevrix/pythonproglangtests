@@ -1,57 +1,87 @@
 [
   {
     "NODE": {
+      "type": "VAR_DECL",
+      "name": "answer",
+      "value": {
+        "type": "FUNCTION_CALL",
+        "name": "read",
+        "arguments": [
+          {
+            "type": "STRING",
+            "value": "Did bob built something?: "
+          }
+        ]
+      }
+    }
+  },
+  {
+    "NODE": {
+      "type": "VAR_DECL",
+      "name": "bob_built_something",
+      "value": {
+        "type": "IDENTIFIER",
+        "value": "answer"
+      }
+    }
+  },
+  {
+    "NODE": {
       "type": "IF_STATEMENT",
       "condition": {
-        "type": "BOOL",
-        "value": "False"
+        "type": "IDENTIFIER",
+        "value": "bob_built_something"
       },
       "child": [
         {
           "type": "VAR_DECL",
-          "name": "i",
+          "name": "build",
           "value": {
             "type": "FUNCTION_CALL",
             "name": "read",
             "arguments": [
               {
                 "type": "STRING",
-                "value": "Enter the I value: "
+                "value": "What did bob build?: "
               }
             ]
           }
         },
         {
-          "type": "FUNCTION_CALL",
-          "name": "print",
-          "arguments": [
-            [
+          "type": "VAR_DECL",
+          "name": "big",
+          "value": {
+            "type": "FUNCTION_CALL",
+            "name": "read",
+            "arguments": [
               {
                 "type": "STRING",
-                "value": "bye world & %V"
-              },
-              {
-                "type": "IDENTIFIER",
-                "value": "i"
+                "value": "Is the thing that bob built big?: "
               }
             ]
-          ]
+          }
         },
         {
           "type": "IF_STATEMENT",
           "condition": {
-            "type": "BOOL",
-            "value": "False"
+            "type": "IDENTIFIER",
+            "value": "big"
           },
           "child": [
             {
               "type": "FUNCTION_CALL",
               "name": "print",
               "arguments": [
-                {
-                  "type": "STRING",
-                  "value": "Hello"
-                }
+                [
+                  {
+                    "type": "STRING",
+                    "value": "Bob built a big %V"
+                  },
+                  {
+                    "type": "IDENTIFIER",
+                    "value": "build"
+                  }
+                ]
               ]
             }
           ]

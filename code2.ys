@@ -1,0 +1,6 @@
+function myfunction() {
+    b = 1;
+    return b;
+};
+retval = myfunction();
+print("%V", retval);
