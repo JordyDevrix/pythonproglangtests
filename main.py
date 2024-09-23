@@ -8,7 +8,7 @@ import ast_json_maker
 
 def main(debug):
     # Read code from file
-    file_path = "code.txt"
+    file_path = "code.ys"
     code = file_scanner.read_code(file_path)
 
     # Tokenize code

@@ -9,7 +9,7 @@
         "arguments": [
           {
             "type": "STRING",
-            "value": "Did she take the kids?: "
+            "value": "Did bob built something?: "
           }
         ]
       }
@@ -18,7 +18,7 @@
   {
     "NODE": {
       "type": "VAR_DECL",
-      "name": "did_she_take_the_kids",
+      "name": "bob_built_something",
       "value": {
         "type": "IDENTIFIER",
         "value": "answer"
@@ -30,17 +30,37 @@
       "type": "IF_STATEMENT",
       "condition": {
         "type": "IDENTIFIER",
-        "value": "did_she_take_the_kids"
+        "value": "bob_built_something"
       },
       "child": [
+        {
+          "type": "VAR_DECL",
+          "name": "build",
+          "value": {
+            "type": "FUNCTION_CALL",
+            "name": "read",
+            "arguments": [
+              {
+                "type": "STRING",
+                "value": "What did bob build?: "
+              }
+            ]
+          }
+        },
         {
           "type": "FUNCTION_CALL",
           "name": "print",
           "arguments": [
-            {
-              "type": "STRING",
-              "value": "She took the kids."
-            }
+            [
+              {
+                "type": "STRING",
+                "value": "Bob built a %V"
+              },
+              {
+                "type": "IDENTIFIER",
+                "value": "build"
+              }
+            ]
           ]
         }
       ]

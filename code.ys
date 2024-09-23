@@ -1,0 +1,14 @@
+
+# YoinkleScript code here
+
+answer = read("Did bob built something?: ");
+bob_built_something = answer;
+
+if (bob_built_something) {
+    build = read("What did bob build?: ");
+    print("Bob built a %V", build);
+};
+
+
+
+
