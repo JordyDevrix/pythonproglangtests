@@ -48,19 +48,42 @@
           }
         },
         {
-          "type": "FUNCTION_CALL",
-          "name": "print",
-          "arguments": [
-            [
+          "type": "VAR_DECL",
+          "name": "big",
+          "value": {
+            "type": "FUNCTION_CALL",
+            "name": "read",
+            "arguments": [
               {
                 "type": "STRING",
-                "value": "Bob built a %V"
-              },
-              {
-                "type": "IDENTIFIER",
-                "value": "build"
+                "value": "Is the thing that bob built big?: "
               }
             ]
+          }
+        },
+        {
+          "type": "IF_STATEMENT",
+          "condition": {
+            "type": "IDENTIFIER",
+            "value": "big"
+          },
+          "child": [
+            {
+              "type": "FUNCTION_CALL",
+              "name": "print",
+              "arguments": [
+                [
+                  {
+                    "type": "STRING",
+                    "value": "Bob built a big %V"
+                  },
+                  {
+                    "type": "IDENTIFIER",
+                    "value": "build"
+                  }
+                ]
+              ]
+            }
           ]
         }
       ]

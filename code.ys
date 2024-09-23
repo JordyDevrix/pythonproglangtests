@@ -6,7 +6,10 @@ bob_built_something = answer;
 
 if (bob_built_something) {
     build = read("What did bob build?: ");
-    print("Bob built a %V", build);
+    big = read("Is the thing that bob built big?: ");
+    if (big) {
+        print("Bob built a big %V", build);
+    };
 };
 
 
