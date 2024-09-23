@@ -27,20 +27,20 @@
   },
   {
     "NODE": {
+      "type": "VAR_DECL",
+      "name": "a",
+      "value": {
+        "type": "INT",
+        "value": "3"
+      }
+    }
+  },
+  {
+    "NODE": {
       "type": "IF_STATEMENT",
       "condition": {
-        "type": "BIN_EXPR",
-        "operator": "-",
-        "left": [
-          {
-            "type": "INT",
-            "value": "1"
-          }
-        ],
-        "right": {
-          "type": "INT",
-          "value": "1"
-        }
+        "type": "BOOL",
+        "value": "True"
       },
       "child": {
         "type": "FUNCTION_CALL",

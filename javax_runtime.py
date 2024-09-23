@@ -10,7 +10,12 @@ def run_javax(ast):
 
         match node["type"]:
             case "VAR_DECL":
+                for index in range(len(global_variables)):
+                    if node["name"] == list(global_variables[index].keys())[0]:
+                        global_variables.pop(index)
+                        break
                 match node["value"]["type"]:
+
                     case "STRING":
                         global_variables.append({node["name"]: str(node["value"]["value"])})
                     case "INT":
@@ -22,13 +27,18 @@ def run_javax(ast):
                             global_variables.append({node["name"]: True})
                         elif node["value"]["value"] == "False":
                             global_variables.append({node["name"]: False})
-                        print(node["value"]["value"])
                     case "FUNCTION_CALL":
                         variable = run_node(node["value"])
                         global_variables.append({node["name"]: variable})
                     case "BIN_EXPR":
                         variable = run_node(node["value"])
                         global_variables.append({node["name"]: variable})
+                    case "IDENTIFIER":
+                        for variable in global_variables:
+                            if node["value"]["value"] == list(variable.keys())[0]:
+                                value = run_node(node["value"])
+                                global_variables.append({node["name"]: value})
+                                break
 
             case "FUNCTION_CALL":
                 if node["name"] == "print":
