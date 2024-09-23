@@ -80,6 +80,16 @@ def create_tokens():
             i += 5
             continue
 
+        if code[i:i+5] == "return" and (i+5 == code_length or not std_isalphanumeric(code[i+5])):
+            tokens.append(("KEYWORD", "return"))
+            i += 5
+            continue
+
+        if code[i:i+8] == "function" and (i+8 == code_length or not std_isalphanumeric(code[i+8])):
+            tokens.append(("FUNCTION", "function"))
+            i += 8
+            continue
+
         if code[i:i+4] == "read" and (i+4 == code_length or not std_isalphanumeric(code[i+4])):
             tokens.append(("KEYWORD", "read"))
             i += 4

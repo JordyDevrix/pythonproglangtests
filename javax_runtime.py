@@ -99,7 +99,8 @@ def run_javax(ast):
             case "IF_STATEMENT":
                 condition = run_node(node["condition"])
                 if condition:
-                    run_node(node["child"])
+                    for child in node["child"]:
+                        run_node(child)
 
     for node_data in ast:
         run_node(node_data["NODE"])

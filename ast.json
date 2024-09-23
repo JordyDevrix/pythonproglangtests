@@ -1,67 +1,33 @@
 [
   {
     "NODE": {
-      "type": "VAR_DECL",
-      "name": "i",
-      "value": {
-        "type": "FUNCTION_CALL",
-        "name": "read",
-        "arguments": [
-          {
-            "type": "STRING",
-            "value": "Enter your number: "
-          }
-        ]
-      }
-    }
-  },
-  {
-    "NODE": {
-      "type": "VAR_DECL",
-      "name": "a",
-      "value": {
-        "type": "BOOL",
-        "value": "False"
-      }
-    }
-  },
-  {
-    "NODE": {
-      "type": "VAR_DECL",
-      "name": "a",
-      "value": {
-        "type": "INT",
-        "value": "3"
-      }
-    }
-  },
-  {
-    "NODE": {
       "type": "IF_STATEMENT",
       "condition": {
         "type": "BOOL",
         "value": "True"
       },
-      "child": {
-        "type": "FUNCTION_CALL",
-        "name": "print",
-        "arguments": [
-          [
+      "child": [
+        {
+          "type": "FUNCTION_CALL",
+          "name": "print",
+          "arguments": [
             {
               "type": "STRING",
-              "value": "Hello world and here are your two values 1: %V 2: %V"
-            },
-            {
-              "type": "IDENTIFIER",
-              "value": "i"
-            },
-            {
-              "type": "IDENTIFIER",
-              "value": "a"
+              "value": "hello world"
             }
           ]
-        ]
-      }
+        },
+        {
+          "type": "FUNCTION_CALL",
+          "name": "print",
+          "arguments": [
+            {
+              "type": "STRING",
+              "value": "bye world"
+            }
+          ]
+        }
+      ]
     }
   }
 ]
