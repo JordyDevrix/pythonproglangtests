@@ -1,5 +1,7 @@
 i = read("Enter your number: ");
+a = False;
 
-j = (2 + 2) + 3;
 
-print("%V", j);
+if (1-1) {
+    print("Hello world and here are your two values 1: %V 2: %V", i, a);
+}

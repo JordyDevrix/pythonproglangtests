@@ -4,145 +4,64 @@
       "type": "VAR_DECL",
       "name": "i",
       "value": {
+        "type": "FUNCTION_CALL",
+        "name": "read",
+        "arguments": [
+          {
+            "type": "STRING",
+            "value": "Enter your number: "
+          }
+        ]
+      }
+    }
+  },
+  {
+    "NODE": {
+      "type": "VAR_DECL",
+      "name": "a",
+      "value": {
         "type": "BOOL",
-        "value": "True"
+        "value": "False"
       }
     }
   },
   {
     "NODE": {
-      "type": "VAR_DECL",
-      "name": "j",
-      "value": {
-        "type": "FUNCTION_CALL",
-        "name": "read",
-        "arguments": [
-          {
-            "type": "STRING",
-            "value": "Enter a number to print: "
-          }
-        ]
-      }
-    }
-  },
-  {
-    "NODE": {
-      "type": "VAR_DECL",
-      "name": "k",
-      "value": {
-        "type": "STRING",
-        "value": "Hello"
-      }
-    }
-  },
-  {
-    "NODE": {
-      "type": "FUNCTION_CALL",
-      "name": "print",
-      "arguments": [
-        [
-          {
-            "type": "STRING",
-            "value": "%V Ahh moment"
-          },
-          {
-            "type": "IDENTIFIER",
-            "value": "i"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "NODE": {
-      "type": "FUNCTION_CALL",
-      "name": "print",
-      "arguments": [
-        {
-          "type": "STRING",
-          "value": "hello"
-        }
-      ]
-    }
-  },
-  {
-    "NODE": {
-      "type": "FUNCTION_CALL",
-      "name": "print",
-      "arguments": [
-        [
-          {
-            "type": "STRING",
-            "value": "You just entered: %V"
-          },
-          {
-            "type": "IDENTIFIER",
-            "value": "j"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "NODE": {
-      "type": "VAR_DECL",
-      "name": "d",
-      "value": {
-        "type": "FUNCTION_CALL",
-        "name": "read",
-        "arguments": [
-          {
-            "type": "STRING",
-            "value": "Enter the number you want to calculate: "
-          }
-        ]
-      }
-    }
-  },
-  {
-    "NODE": {
-      "type": "VAR_DECL",
-      "name": "c",
-      "value": {
+      "type": "IF_STATEMENT",
+      "condition": {
         "type": "BIN_EXPR",
-        "operator": "*",
-        "left": {
-          "type": "BIN_EXPR",
-          "operator": "+",
-          "left": [
-            {
-              "type": "INT",
-              "value": "2"
-            }
-          ],
-          "right": {
-            "type": "IDENTIFIER",
-            "value": "d"
+        "operator": "-",
+        "left": [
+          {
+            "type": "INT",
+            "value": "1"
           }
-        },
+        ],
         "right": {
           "type": "INT",
-          "value": "5"
+          "value": "1"
         }
-      }
-    }
-  },
-  {
-    "NODE": {
-      "type": "FUNCTION_CALL",
-      "name": "print",
-      "arguments": [
-        [
-          {
-            "type": "STRING",
-            "value": "C = %V"
-          },
-          {
-            "type": "IDENTIFIER",
-            "value": "c"
-          }
+      },
+      "child": {
+        "type": "FUNCTION_CALL",
+        "name": "print",
+        "arguments": [
+          [
+            {
+              "type": "STRING",
+              "value": "Hello world and here are your two values 1: %V 2: %V"
+            },
+            {
+              "type": "IDENTIFIER",
+              "value": "i"
+            },
+            {
+              "type": "IDENTIFIER",
+              "value": "a"
+            }
+          ]
         ]
-      ]
+      }
     }
   }
 ]

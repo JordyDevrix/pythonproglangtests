@@ -42,8 +42,8 @@ def parse_tokens(tokens):
                         }
                     )
                 else:
+                    print(f"{tokens[idx]} - correct")
                     expression.append({"type": token_type, "value": token_value})
-                    print(tokens[idx:])
                     idx += 1    # IMPORTANT TO BREAK THE LOOP
             elif token_type == "OPERATOR":
                 idx += 1
@@ -54,12 +54,18 @@ def parse_tokens(tokens):
                     "right": parse_expression()
                 }
             elif token_type == "IFSTATE":
+                print(tokens[idx])
                 idx += 2    # Skip the opening bracket
+                print(tokens[idx])
                 node_exp = {
                     "type": "IF_STATEMENT",
                     "condition": parse_expression(),
-                    "child": parse_expression()
+                    "child": None
                 }
+                print(tokens[idx])
+                idx += 1
+                print(f"{tokens[idx]} - after")
+                node_exp["child"] = parse_expression()
                 expression.append(node_exp)
                 idx += 1
 

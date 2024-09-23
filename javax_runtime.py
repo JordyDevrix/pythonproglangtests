@@ -10,10 +10,6 @@ def run_javax(ast):
 
         match node["type"]:
             case "VAR_DECL":
-                if node["name"] in [list(variable.keys())[0] for variable in global_variables]:
-                    print(errors.variable_already_declared(node["name"]))
-                    exit(1)
-
                 match node["value"]["type"]:
                     case "STRING":
                         global_variables.append({node["name"]: str(node["value"]["value"])})
@@ -22,7 +18,11 @@ def run_javax(ast):
                     case "FLOAT":
                         global_variables.append({node["name"]: float(node["value"]["value"])})
                     case "BOOL":
-                        global_variables.append({node["name"]: bool(node["value"]["value"])})
+                        if node["value"]["value"] == "True":
+                            global_variables.append({node["name"]: True})
+                        elif node["value"]["value"] == "False":
+                            global_variables.append({node["name"]: False})
+                        print(node["value"]["value"])
                     case "FUNCTION_CALL":
                         variable = run_node(node["value"])
                         global_variables.append({node["name"]: variable})
@@ -77,14 +77,19 @@ def run_javax(ast):
                 for variable in global_variables:
                     if node["value"] == list(variable.keys())[0]:
                         value = list(variable.values())[0]
-                        if value.isnumeric():
+                        if isinstance(value, int):
                             return int(value)
-                        elif value.isfloat():
+                        elif isinstance(value, float):
                             return float(value)
-                        elif value in ["True", "False"]:
+                        elif isinstance(value, bool):
                             return bool(value)
                         else:
                             return value
+
+            case "IF_STATEMENT":
+                condition = run_node(node["condition"])
+                if condition:
+                    run_node(node["child"])
 
     for node_data in ast:
         run_node(node_data["NODE"])
