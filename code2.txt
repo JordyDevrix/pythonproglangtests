@@ -1,5 +1,10 @@
-if (True) {
-    print("hello world");
-    print("bye world");
+if (False) {
+    i = read("Enter the I value: ");
+    print("bye world & %V", i);
+
+    if (False) {
+        print("Hello");
+    };
+
 };
 
