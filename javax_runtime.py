@@ -81,7 +81,10 @@ def run_javax(ast):
             case "STRING":
                 return str(node["value"])
             case "BOOL":
-                return bool(node["value"])
+                if node["value"] == "True":
+                    return True
+                elif node["value"] == "False":
+                    return False
 
             case "IDENTIFIER":
                 for variable in global_variables:
@@ -99,7 +102,8 @@ def run_javax(ast):
             case "IF_STATEMENT":
                 condition = run_node(node["condition"])
                 if condition:
-                    run_node(node["child"])
+                    for child in node["child"]:
+                        run_node(child)
 
     for node_data in ast:
         run_node(node_data["NODE"])

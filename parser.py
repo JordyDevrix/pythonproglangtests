@@ -1,3 +1,5 @@
+import time
+
 import javax_tokens
 
 
@@ -42,7 +44,6 @@ def parse_tokens(tokens):
                         }
                     )
                 else:
-                    print(f"{tokens[idx]} - correct")
                     expression.append({"type": token_type, "value": token_value})
                     idx += 1    # IMPORTANT TO BREAK THE LOOP
             elif token_type == "OPERATOR":
@@ -54,24 +55,24 @@ def parse_tokens(tokens):
                     "right": parse_expression()
                 }
             elif token_type == "IFSTATE":
-                print(tokens[idx])
                 idx += 2    # Skip the opening bracket
-                print(tokens[idx])
                 node_exp = {
                     "type": "IF_STATEMENT",
                     "condition": parse_expression(),
-                    "child": None
+                    "child": []
                 }
-                print(tokens[idx])
-                idx += 1
-                print(f"{tokens[idx]} - after")
-                node_exp["child"] = parse_expression()
+                idx += 2
+                while tokens[idx] != ("SYMBOL", "}"):
+                    node_exp["child"].append(parse_expression())
+                    if tokens[idx][1] == ";":
+                        idx += 1
+
                 expression.append(node_exp)
                 idx += 1
 
             elif (token_type == "SYMBOL") and (token_value in (")", ";")):
                 break
-            elif (token_type == "SYMBOL") and (token_value in ("(", "{")):
+            elif (token_type == "SYMBOL") and (token_value in "("):
                 idx += 1
                 expression = parse_expression()
                 idx += 1

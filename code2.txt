@@ -1,8 +1,10 @@
-i = read("Enter your number: ");
-a = False;
-a = 3;
+if (False) {
+    i = read("Enter the I value: ");
+    print("bye world & %V", i);
 
+    if (False) {
+        print("Hello");
+    };
 
-if (True) {
-    print("Hello world and here are your two values 1: %V 2: %V", i, a);
-}
+};
+
