@@ -30,7 +30,7 @@
       "type": "IF_STATEMENT",
       "condition": {
         "type": "IDENTIFIER",
-        "value": "bob_built_something"
+        "value": "answer"
       },
       "child": [
         {
@@ -64,8 +64,18 @@
         {
           "type": "IF_STATEMENT",
           "condition": {
-            "type": "IDENTIFIER",
-            "value": "big"
+            "type": "BIN_EXPR",
+            "operator": "+",
+            "left": [
+              {
+                "type": "INT",
+                "value": "0"
+              }
+            ],
+            "right": {
+              "type": "IDENTIFIER",
+              "value": "big"
+            }
           },
           "child": [
             {
@@ -76,6 +86,41 @@
                   {
                     "type": "STRING",
                     "value": "Bob built a big %V"
+                  },
+                  {
+                    "type": "IDENTIFIER",
+                    "value": "build"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "IF_STATEMENT",
+          "condition": {
+            "type": "BIN_EXPR",
+            "operator": "-",
+            "left": [
+              {
+                "type": "INT",
+                "value": "1"
+              }
+            ],
+            "right": {
+              "type": "IDENTIFIER",
+              "value": "big"
+            }
+          },
+          "child": [
+            {
+              "type": "FUNCTION_CALL",
+              "name": "print",
+              "arguments": [
+                [
+                  {
+                    "type": "STRING",
+                    "value": "Bob built a small %V"
                   },
                   {
                     "type": "IDENTIFIER",

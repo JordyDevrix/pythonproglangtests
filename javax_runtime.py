@@ -48,6 +48,12 @@ def run_javax(ast):
                     arguments = node["arguments"]
                     string = arguments[0]["value"]
                     variable = input(string)
+                    if variable == "True":
+                        variable = True
+                    elif variable == "False":
+                        variable = False
+                    elif variable.isnumeric():
+                        variable = int(variable)
                     return variable
 
             case "BIN_EXPR":

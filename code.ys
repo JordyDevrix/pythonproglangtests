@@ -4,11 +4,16 @@
 answer = read("Did bob built something?: ");
 bob_built_something = answer;
 
-if (bob_built_something) {
+if (answer) {
     build = read("What did bob build?: ");
     big = read("Is the thing that bob built big?: ");
-    if (big) {
+
+    if (0 + big) {
         print("Bob built a big %V", build);
+    };
+
+    if (1 - big) {
+        print("Bob built a small %V", build);
     };
 };
 
